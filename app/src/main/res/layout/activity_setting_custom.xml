@@ -13,12 +13,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="网络和蓝牙"
-        android:textColor="@color/white"
-        android:textSize="35sp"
+        android:layout_above="@+id/setting_custom_rl"
         android:layout_alignLeft="@+id/setting_custom_rl"
         android:layout_marginBottom="30dp"
-        android:layout_above="@+id/setting_custom_rl" />
+        android:text="网络和蓝牙"
+        android:textColor="@color/white"
+        android:textSize="35sp" />
 
     <RelativeLayout
         android:id="@+id/setting_custom_rl"

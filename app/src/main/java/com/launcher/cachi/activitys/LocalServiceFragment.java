@@ -2,11 +2,15 @@ package com.launcher.cachi.activitys;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.app.Activity;
+
 
 import com.launcher.cachi.R;
 import com.launcher.cachi.application.ClientApplication;
@@ -49,25 +53,25 @@ public class LocalServiceFragment extends WoDouGameBaseFragment implements View.
         tv = (ImageButton) view.findViewById(R.id.local_tv);
         tour = (ImageButton) view.findViewById(R.id.local_tour);
         ad1 = (ImageButton) view.findViewById(R.id.local_ad1);
-        ad2 = (ImageButton) view.findViewById(R.id.local_ad2);
-        cate = (ImageButton) view.findViewById(R.id.local_cate);
-        weather = (ImageButton) view.findViewById(R.id.local_weather);
-        news = (ImageButton) view.findViewById(R.id.local_news);
-        appStore = (ImageButton) view.findViewById(R.id.local_app_store);
-        video = (ImageButton) view.findViewById(R.id.local_video);
+//        ad2 = (ImageButton) view.findViewById(R.id.local_ad2);
+//        cate = (ImageButton) view.findViewById(R.id.local_cate);
+//        weather = (ImageButton) view.findViewById(R.id.local_weather);
+//        news = (ImageButton) view.findViewById(R.id.local_news);
+//        appStore = (ImageButton) view.findViewById(R.id.local_app_store);
+//        video = (ImageButton) view.findViewById(R.id.local_video);
 
         tv.setOnFocusChangeListener(mFocusChangeListener);
         tour.setOnFocusChangeListener(mFocusChangeListener);
         ad1.setOnFocusChangeListener(mFocusChangeListener);
-        ad2.setOnFocusChangeListener(mFocusChangeListener);
-        cate.setOnFocusChangeListener(mFocusChangeListener);
-        weather.setOnFocusChangeListener(mFocusChangeListener);
-        news.setOnFocusChangeListener(mFocusChangeListener);
-        appStore.setOnFocusChangeListener(mFocusChangeListener);
-        video.setOnFocusChangeListener(mFocusChangeListener);
+//        ad2.setOnFocusChangeListener(mFocusChangeListener);
+//        cate.setOnFocusChangeListener(mFocusChangeListener);
+//        weather.setOnFocusChangeListener(mFocusChangeListener);
+//        news.setOnFocusChangeListener(mFocusChangeListener);
+//        appStore.setOnFocusChangeListener(mFocusChangeListener);
+//        video.setOnFocusChangeListener(mFocusChangeListener);
 
         tv.setOnClickListener(this);
-        video.setOnClickListener(this);
+//        video.setOnClickListener(this);
 
         tv.setFocusable(true);
         tv.setFocusableInTouchMode(true);
@@ -81,23 +85,45 @@ public class LocalServiceFragment extends WoDouGameBaseFragment implements View.
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.local_tv:
+                Intent i;
+                PackageManager manager = getActivity().getPackageManager();
+                try {
+                    i = manager.getLaunchIntentForPackage("by.stari4ek.tvirl");
+                    if (i == null)
+                        throw new PackageManager.NameNotFoundException();
+                    i.addCategory(Intent.CATEGORY_LAUNCHER);
+                    startActivity(i);
+                } catch (PackageManager.NameNotFoundException e) {
+
+                }
                 break;
             case R.id.local_ad1:
                 break;
-            case R.id.local_ad2:
-                break;
-            case R.id.local_weather:
-                break;
-            case R.id.local_app_store:
-                break;
-            case R.id.local_cate:
-                break;
-            case R.id.local_news:
-                break;
+//            case R.id.local_ad2:
+//                break;
+//            case R.id.local_weather:
+//                break;
+//            case R.id.local_app_store:
+//                break;
+//            case R.id.local_cate:
+//                break;
+//            case R.id.local_news:
+//                break;
             case R.id.local_tour:
+                Intent i_youtube;
+                PackageManager manager_youtube = getActivity().getPackageManager();
+                try {
+                    i_youtube = manager_youtube.getLaunchIntentForPackage("com.google.android.youtube");
+                    if (i_youtube == null)
+                        throw new PackageManager.NameNotFoundException();
+                    i_youtube.addCategory(Intent.CATEGORY_LAUNCHER);
+                    startActivity(i_youtube);
+                } catch (PackageManager.NameNotFoundException e) {
+
+                }
                 break;
-            case R.id.local_video:
-                break;
+//            case R.id.local_video:
+//                break;
         }
     }
 }

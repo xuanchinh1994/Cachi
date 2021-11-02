@@ -25,7 +25,7 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.launcher.cachi.R;
-import com.launcher.cachi.activitys.setting.SettingFragment;
+//import com.launcher.cachi.activitys.setting.SettingFragment;
 import com.launcher.cachi.adapter.MainActivityAdapter;
 import com.launcher.cachi.application.ClientApplication;
 import com.launcher.cachi.db.SharedPreferencesUtil;
@@ -46,8 +46,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "MainActivityGameLTV2";
     private MyViewPager mViewPager;
     private RadioButton localService;
-    private RadioButton setting;
-    private RadioButton app;
+//    private RadioButton setting;
+//    private RadioButton app;
     private SQLiteDatabase mSQLiteDataBase;
     private ClientApplication mClientApp;
     private List<ContentValues> datas;//图片数据
@@ -172,17 +172,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void initView() {
         mViewPager = (MyViewPager) this.findViewById(R.id.main_viewpager);
         localService = (RadioButton) findViewById(R.id.main_title_local);
-        setting = (RadioButton) findViewById(R.id.main_title_setting);
-        app = (RadioButton) findViewById(R.id.main_title_app);
+//        setting = (RadioButton) findViewById(R.id.main_title_setting);
+//        app = (RadioButton) findViewById(R.id.main_title_app);
         localService.setSelected(true);
-        mViews = new View[]{localService, setting, app};
+//        mViews = new View[]{localService, setting, app};
+        mViews = new View[]{localService};
         setListener();
     }
 
     private void setListener() {
         localService.setOnClickListener(this);
-        setting.setOnClickListener(this);
-        app.setOnClickListener(this);
+//        setting.setOnClickListener(this);
+//        app.setOnClickListener(this);
 
         localService.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -192,22 +193,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 }
             }
         });
-        setting.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                    mViewPager.setCurrentItem(1);
-                }
-            }
-        });
-        app.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                    mViewPager.setCurrentItem(2);
-                }
-            }
-        });
+//        setting.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                if(hasFocus){
+//                    mViewPager.setCurrentItem(1);
+//                }
+//            }
+//        });
+//        app.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                if(hasFocus){
+//                    mViewPager.setCurrentItem(2);
+//                }
+//            }
+//        });
     }
 
 
@@ -218,14 +219,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 currentIndex = 0;
                 mViewPager.setCurrentItem(0);
                 break;
-            case R.id.main_title_setting:
-                currentIndex = 3;
-                mViewPager.setCurrentItem(1);
-                break;
-            case R.id.main_title_app:
-                currentIndex = 4;
-                mViewPager.setCurrentItem(2);
-                break;
+//            case R.id.main_title_setting:
+//                currentIndex = 3;
+//                mViewPager.setCurrentItem(1);
+//                break;
+//            case R.id.main_title_app:
+//                currentIndex = 4;
+//                mViewPager.setCurrentItem(2);
+//                break;
         }
     }
 
@@ -245,8 +246,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         transaction = manager.beginTransaction();
 
         LocalServiceFragment interactTV = new LocalServiceFragment();
-        SettingFragment setting = new SettingFragment();
-        AppFragment app = new AppFragment();
+//        SettingFragment setting = new SettingFragment();
+//        AppFragment app = new AppFragment();
 
          /*创建一个Bundle用来存储数据，传递到Fragment中*/
         Bundle bundle = new Bundle();
@@ -257,8 +258,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         interactTV.setArguments(bundle);
 
         fragments.add(interactTV);
-        fragments.add(setting);
-        fragments.add(app);
+//        fragments.add(setting);
+//        fragments.add(app);
 
         transaction.commitAllowingStateLoss();
 
@@ -288,20 +289,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 case 0:
                     currentIndex = 0;
                     localService.setSelected(true);
-                    setting.setSelected(false);
-                    app.setSelected(false);
+//                    setting.setSelected(false);
+//                    app.setSelected(false);
                     break;
                 case 1:
                     currentIndex = 1;
                     localService.setSelected(false);
-                    setting.setSelected(true);
-                    app.setSelected(false);
+//                    setting.setSelected(true);
+//                    app.setSelected(false);
                     break;
                 case 2:
                     currentIndex = 2;
                     localService.setSelected(false);
-                    setting.setSelected(false);
-                    app.setSelected(true);
+//                    setting.setSelected(false);
+//                    app.setSelected(true);
                     break;
             }
         }

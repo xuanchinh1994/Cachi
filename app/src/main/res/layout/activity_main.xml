@@ -13,51 +13,88 @@
         </com.launcher.cachi.views.GameTitleView>
 
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_wellcome"
+            android:text="Kính chào quý khách"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_user_name"
+            android:text="Nguyễn Tiến Mạnh"
+            android:textSize="35sp"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+
     <RadioGroup
         android:id="@+id/main_group"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="0dp"
         android:gravity="center"
         android:orientation="horizontal">
+
 
         <RadioButton
             android:id="@+id/main_title_local"
             android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:background="@drawable/sel_local_service"
+            android:layout_height="0dp"
             android:button="@null"
             android:textSize="20sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/title_divider" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/main_title_local"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@drawable/sel_local_service"-->
+<!--            android:button="@null"-->
+<!--            android:textSize="20sp" />-->
 
-        <RadioButton
-            android:id="@+id/main_title_setting"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/sel_setting"
-            android:button="@null"
-            android:textSize="20sp" />
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:background="@drawable/title_divider" />-->
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/title_divider" />
+<!--        <RadioButton-->
+<!--            android:id="@+id/main_title_setting"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:background="@drawable/sel_setting"-->
+<!--            android:button="@null"-->
+<!--            android:textSize="20sp" />-->
 
-        <RadioButton
-            android:id="@+id/main_title_app"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="20dp"
-            android:background="@drawable/sel_app"
-            android:button="@null"
-            android:textSize="20sp" />
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:background="@drawable/title_divider" />-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/main_title_app"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:background="@drawable/sel_app"-->
+<!--            android:button="@null"-->
+<!--            android:textSize="20sp" />-->
 
     </RadioGroup>
 
