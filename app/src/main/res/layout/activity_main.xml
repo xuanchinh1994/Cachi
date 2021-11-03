@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/main_wellcome"
-            android:text="Kính chào quý khách"
+            android:text="WELLCOME"
             android:textSize="25sp"
             android:textColor="@color/white"
             android:gravity="center"/>
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/main_user_name"
-            android:text="Nguyễn Tiến Mạnh"
+            android:text="Mr.Nguyễn Tiến Mạnh"
             android:textSize="35sp"
             android:layout_margin="5dp"
             android:textColor="@color/white"
