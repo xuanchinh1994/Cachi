@@ -98,18 +98,18 @@ public class LocalServiceFragment extends WoDouGameBaseFragment implements View.
 
     private void showImages() {}
 
-    @Override
-    public void onAttachedToWindow () {
-        super.onAttachedToWindow();
-
-        setInteractive(false);
-        setFullscreen(true);
-
-        ImageView imageView = new ImageView(this);
-        imageView.setImageResource(R.drawable.dream);
-
-        setContentView(imageView);
-    }
+//    @Override
+//    public void onAttachedToWindow () {
+//        super.onAttachedToWindow();
+//
+//        setInteractive(false);
+//        setFullscreen(true);
+//
+//        ImageView imageView = new ImageView(this);
+//        imageView.setImageResource(R.drawable.dream);
+//
+//        setContentView(imageView);
+//    }
 
     @Override
     public void onClick(View v) {
